@@ -9,6 +9,11 @@
 .track-title {
   padding: 30rpx;
   margin-bottom: 20rpx;
+  min-height: 72rpx;
+}
+
+.track-title-right{
+  margin-left: 100rpx;
 }
 
 .track-title icon {
@@ -25,11 +30,11 @@
   font-size: 32rpx;
   color: #31708f;
   font-weight: bold;
-  margin-bottom: 20rpx;
+  margin-bottom: 15rpx;
 }
 
 .track-title .track-state {
-  font-size: 24rpx;
+  font-size: 26rpx;
 }
 
 .track-success {
@@ -147,4 +152,34 @@
   width: 5%;
   margin-bottom: -4rpx;
   margin-right: 8rpx;
+}
+
+
+.spinner {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #f5b855;
+
+  margin: 250rpx auto 0;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }

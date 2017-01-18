@@ -7,7 +7,20 @@ Page({
     result: {},
     titleInfo: {}
   },
+  onShareAppMessage: function () {
+    var that = this;
+    return {
+      title: that.data.number,
+      desc: '快递：' + that.data.number + '的跟踪信息。',
+      path: '/pages/track/track?n=' + that.data.number
+    }
+  },
   onPullDownRefresh: function () {
+    if (this.data.tracking) {
+      wx.stopPullDownRefresh();
+      return;
+    }
+
     callTrackApi(this, 'PullDownRefresh');
   },
   onLoad: function (option) {
@@ -22,7 +35,10 @@ Page({
       number: option.n
     });
 
-    callTrackApi(that);
+    setTimeout(function () {
+      callTrackApi(that);
+    }, 5000);
+
   }
 });
 

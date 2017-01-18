@@ -1,9 +1,13 @@
 <import src="_track_result.wxml" />
 <view class="container">
-  <view class="track-detail">
+  <block wx:if="{{tracking}}">
+    <view class="spinner"></view>
+    <view class="f-12 mt-10 text-muted">正在为您查询，请稍后...</view>
+  </block>
+  <view wx:else class="track-detail">
     <view class="track-title {{titleInfo.css}}">
-      <icon type="{{titleInfo.iconType}}" size="30" />
-      <view class="ml-40">
+      <icon type="{{titleInfo.iconType}}" size="40" />
+      <view class="track-title-right">
         <text class="track-number">{{result.TrackingNumber}}</text>
         <view wx:if="{{result.Exception==='None'}}" class="track-state">
           {{result.StatusDescription}}

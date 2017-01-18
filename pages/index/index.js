@@ -5,10 +5,15 @@ Page({
     histories: [],
     historyLongTouch: false
   },
+  onShareAppMessage: function () {
+    return {
+      title: '国际包裹查询工具',
+      desc: '',
+      path: '/pages/index/index'
+    }
+  },
   track: function (e) {
-    wx.navigateTo({
-      url: '../track/track?n=' + e.detail.value
-    });
+    toTrackPage(e.detail.value);
   },
   historyTouchstart: function (e) {
     this.setData({
@@ -20,16 +25,12 @@ Page({
       return;
     }
 
-    wx.navigateTo({
-      url: '../track/track?n=' + e.currentTarget.dataset.number
-    });
+    toTrackPage(e.currentTarget.dataset.number);
   },
   scanNumber: function (e) {
     wx.scanCode({
-      success: (res) => {
-        wx.navigateTo({
-          url: '../track/track?n=' + res.result
-        });
+      success: function (res) {
+        toTrackPage(res.result);
       }
     })
   },
@@ -90,7 +91,7 @@ Page({
             var trackStateStyle = common.trackStateStyle(data.Status);
             data.css = trackStateStyle.css;
             data.iconType = trackStateStyle.iconType;
-            
+
             histories.push(data);
           }
         } catch (e) {
@@ -105,4 +106,19 @@ Page({
       //
     }
   }
-})
+});
+
+function toTrackPage(number) {
+  if (!number) {
+    wx.showToast({
+      title: '输入不能为空。',
+      duration: 1500,
+      icon:'warn'
+    });
+
+    return;
+  }
+  wx.navigateTo({
+    url: '../track/track?n=' + number
+  });
+}
