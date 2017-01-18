@@ -1,0 +1,19 @@
+<template name="trackResult">
+  <view class="track-content">
+    <view class="track-content-title">
+      <label class="bold">{{name}}国家</label> - {{Country.CountryCnName}} -
+      <label>{{Carrire.Name}}</label>
+    </view>
+    <view class="track-content-list">
+      <view class="track-content-item" wx:for="{{Events}}">
+        <view>
+          <text wx:if="{{index===0}}" class="track-content-time-dot track-content-time-dot-first"></text>
+          <text wx:elif="{{index===Events.length-1}}" class="track-content-time-dot track-content-time-dot-last"></text>
+          <text wx:else class="track-content-time-dot"></text>
+          <text class="track-content-time">{{item.Time}}</text>
+        </view>
+        <text class="track-content-event">{{item.Location?item.Location+', ':''}}{{item.Event}}</text>
+      </view>
+    </view>
+  </view>
+</template>

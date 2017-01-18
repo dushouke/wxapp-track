@@ -1,0 +1,34 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.mt-10{margin-top: 20rpx;}
+.ml-40{margin-left: 80rpx;}
+.text-muted {
+    color: #777;
+}
+.bold{font-weight: bold;}
+
+.track-history-empty {
+  padding-top: 60rpx;
+  text-align: center;
+}
+
+.track-history-empty text {
+  font-size: 24rpx;
+  color: orange;
+}
+
+.f-12{font-size: 24rpx;}
+
+.link {
+  display: inline;
+    color: #428bca;
+    text-decoration: underline;
+}
+

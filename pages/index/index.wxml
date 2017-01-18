@@ -1,0 +1,45 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="track-bg">
+    <image class="logo" src="/assets/images/logo.png" mode="widthFix"></image>
+    <view class="track-input-block">
+      <icon type="search" size="15" color="purple" />
+      <input class="track-input" placeholder="请输入快递单号" bindconfirm="track" />
+      <image src="/assets/images/scan.png" mode="widthFix" class="i-scan" bindtap="scanNumber"></image>
+    </view>
+  </view>
+  <view class="track-history">
+    <view class="track-history-empty" wx:if="{{histories.length===0}}">
+      <icon type="info_circle" size="45" color="orange" />
+      <text>
+        您当前没有任何单号，在查询框内输入查询。
+      </text>
+      <view class="mt-10 f-12">
+        试一下：
+        <navigator url="../track/track?n=LX255744009CN" class="link">LX255744009CN</navigator>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="track-history-title">
+        历史记录
+      </view>
+      <view wx:for="{{histories}}" class="track-history-item {{item.css}}" bindtouchstart="historyTouchstart" bindtap="trackHistory" data-number="{{item.TrackingNumber}}" bindlongtap="showActon" wx:key="unique">
+        <view class="track-history-item-title">
+          <icon type="{{item.iconType}}" size="30" />
+          <view>
+            <text class="track-number">{{item.TrackingNumber}}</text>
+            <text class="track-route">从{{item.Original.CountryCnName}}「{{item.Original.CarrireName}}」发往{{item.Destination.CountryCnName}}「{{item.Destination.CarrireName}}」</text>
+          </view>
+        </view>
+        <view wx:if="{{item.LastEvent}}" class="track-history-item-content">
+          <text>{{item.LastEvent.Location?item.LastEvent.Location+', ':''}}{{item.LastEvent.Event}}</text>
+          <text class="mt-10">{{item.LastEvent.Time}}</text>
+        </view>
+        <view wx:else>
+          <text class='text-muted'>您的包裹查询不到跟踪信息。</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

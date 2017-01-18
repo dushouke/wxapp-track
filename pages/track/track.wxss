@@ -1,0 +1,140 @@
+.tracking{width: 100%;}
+
+
+.track-detail {
+  width: 100%;
+}
+
+.track-title {
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.track-title icon {
+  float: left;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.track-title text {
+  display: block;
+}
+
+.track-title .track-number {
+  font-size: 32rpx;
+  color: #31708f;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.track-title .track-state {
+  font-size: 24rpx;
+}
+
+.track-success {
+  background-color: #dff0d8;
+}
+
+.track-success .track-state {
+  color: #3c763d;
+}
+
+.track-info {
+  background-color: #d9edf7;
+}
+
+.track-info .track-state {
+  color: #31708f;
+}
+
+.track-error {
+  background-color: #f2dede;
+}
+
+.track-error .track-state {
+  color: #a94442;
+}
+
+.track-null {
+  background-color: #f5f5f5;
+}
+
+.track-null .track-state {
+  color: #555;
+}
+
+.track-content {
+  font-size: 28rpx;
+  padding: 20rpx;
+  padding-left: 40rpx;
+}
+
+.track-content-title {
+  margin-bottom: 20rpx;
+}
+
+.track-content-title label {
+  color: #a37c5c;
+}
+
+.track-content-item {
+  padding: 12rpx 0;
+}
+
+.track-content-time-dot {
+  position: relative;
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: transparent;
+  margin-bottom: -12rpx;
+  margin-right: 10rpx;
+}
+
+.track-content-time-dot-first {
+  background-color: rgba(245,184,85, 0.3);
+}
+
+.track-content-time {
+  display: inline-block;
+  color: #3a87ad;
+  margin-bottom: 8rpx;
+}
+
+.track-content-time-dot:before {
+  position: absolute;
+  content: ' ';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: rgb(245,184,85);
+  top: 50%;
+  left: 50%;
+  margin-top: -10rpx;
+  margin-left: -10rpx;
+}
+
+.track-content-time-dot:after {
+  content: ' ';
+  border-left: 2rpx dashed rgba(245,184,85, 0.7);
+  height: 120rpx;
+  position: absolute;
+  z-index: 100;
+  top: 40rpx;
+  left: 20rpx;
+}
+
+.track-content-time-dot-last:after {
+  height: 60rpx;
+}
+
+.track-content-event {
+  display: block;
+  color: #333;
+  padding-left: 50rpx;
+  line-height: 1.3;
+}
+
+.i-destination{width:5%;margin-bottom: -4rpx;margin-right: 8rpx;}
+.i-from{width:5%;margin-bottom: -4rpx;margin-right: 8rpx;}
