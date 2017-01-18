@@ -55,7 +55,7 @@ Page({
             that.setData({ 'histories': histories });
 
             if (removeKey) {
-              wx.removeStorageSync("TN::" + removeKey);
+              wx.removeStorageSync(removeKey);
             }
           } catch (e) {
           }
