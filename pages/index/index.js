@@ -1,4 +1,5 @@
-//index.js
+var common = require('../../utils/util.js');
+
 Page({
   data: {
     histories: [],
@@ -10,7 +11,9 @@ Page({
     });
   },
   historyTouchstart: function (e) {
-    this.setData({ historyLongTouch: false });
+    this.setData({
+      historyLongTouch: false
+    });
   },
   trackHistory: function (e) {
     if (this.data.historyLongTouch) {
@@ -31,7 +34,9 @@ Page({
     })
   },
   showActon: function (e) {
-    this.setData({ historyLongTouch: true });
+    this.setData({
+      historyLongTouch: true
+    });
 
     var that = this,
       n = e.currentTarget.dataset.number;
@@ -47,18 +52,18 @@ Page({
               var item = that.data.histories[i];
               if (item.TrackingNumber !== n) {
                 histories.push(item);
-              }
-              else {
+              } else {
                 removeKey = item.unique;
               }
             }
-            that.setData({ 'histories': histories });
+            that.setData({
+              'histories': histories
+            });
 
             if (removeKey) {
               wx.removeStorageSync(removeKey);
             }
-          } catch (e) {
-          }
+          } catch (e) {}
         }
       }
     });
@@ -82,27 +87,10 @@ Page({
           if (data) {
             data.unique = key;
 
-            switch (data.Status) {
-              case 'Delivered':
-                data.css = "track-success";
-                data.iconType = "success";
-                break;
-              case 'Expired':
-              case 'DeliverFailed':
-                data.css = "track-error";
-                data.iconType = "warn";
-                break;
-              case 'Transit':
-              case 'PickUp':
-                data.css = "track-info";
-                data.iconType = "waiting";
-                break
-              default:
-                data.css = "track-null";
-                data.iconType = "clear";
-                break;
-            };
-
+            var trackStateStyle = common.trackStateStyle(data.Status);
+            data.css = trackStateStyle.css;
+            data.iconType = trackStateStyle.iconType;
+            
             histories.push(data);
           }
         } catch (e) {
@@ -110,7 +98,9 @@ Page({
         }
       }
 
-      that.setData({ histories: histories });
+      that.setData({
+        histories: histories
+      });
     } catch (e) {
       //
     }
