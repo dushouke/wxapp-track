@@ -19,7 +19,8 @@ Page({
         console.log(res.data);
       }
     });
-
+    var data = mockDatas[parseInt((Math.random()*10)%3)];
+    
     switch (data.Status) {
       case 'Delivered':
         that.setData({ titleInfo: { css: 'track-success', iconType: 'success' } });
@@ -82,58 +83,57 @@ Page({
 
   }
 });
-
-var data = {
-  TrackingNumber: "1Z7500R0396832623",
-  Status: "None",
-  StatusDescription: "--",
-  Exception: "NumberRuleNotMatch",
-  Original: {
-    Country: {
-      CountryCode: null,
-      CountryCnName: null,
-      CountryEnName: null
-    },
-    Carrire: {
-      Code: null,
-      Type: null,
-      Name: null,
-      Url: null,
-      Language: null
-    },
+var mockDatas = [
+  {
+    TrackingNumber: "1Z7500R0396832623",
     Status: "None",
+    StatusDescription: "--",
     Exception: "NumberRuleNotMatch",
-    SearchElapsed: null,
-    CachedTime: null,
-    Events: [],
-    MatchedCarriers: [
-      ""
-    ]
-  },
-  Destination: {
-    Country: {
-      CountryCode: null,
-      CountryCnName: null,
-      CountryEnName: null
+    Original: {
+      Country: {
+        CountryCode: null,
+        CountryCnName: null,
+        CountryEnName: null
+      },
+      Carrire: {
+        Code: null,
+        Type: null,
+        Name: null,
+        Url: null,
+        Language: null
+      },
+      Status: "None",
+      Exception: "NumberRuleNotMatch",
+      SearchElapsed: null,
+      CachedTime: null,
+      Events: [],
+      MatchedCarriers: [
+        ""
+      ]
     },
-    Carrire: {
-      Code: null,
-      Type: null,
-      Name: null,
-      Url: null,
-      Language: null
+    Destination: {
+      Country: {
+        CountryCode: null,
+        CountryCnName: null,
+        CountryEnName: null
+      },
+      Carrire: {
+        Code: null,
+        Type: null,
+        Name: null,
+        Url: null,
+        Language: null
+      },
+      Status: "None",
+      Exception: "None",
+      SearchElapsed: null,
+      CachedTime: null,
+      Events: [],
+      MatchedCarriers: null
     },
-    Status: "None",
-    Exception: "None",
-    SearchElapsed: null,
-    CachedTime: null,
-    Events: [],
-    MatchedCarriers: null
+    DeliverElapsed: null,
+    Duration: ""
   },
-  DeliverElapsed: null,
-  Duration: ""
-};
-var data2 =
   {
     TrackingNumber: "1Z7500RA0396832623",
     Status: "Delivered",
@@ -224,8 +224,7 @@ var data2 =
     },
     DeliverElapsed: 1268,
     Duration: "21小时"
-  };
-var data1 =
+  },
   {
     TrackingNumber: "LX255744009CN",
     Status: "Transit",
@@ -299,4 +298,5 @@ var data1 =
     },
     DeliverElapsed: 637,
     Duration: "11小时"
-  };
+  }
+];
