@@ -9,13 +9,13 @@
   position: relative;
 }
 
-.track-bg:after{
+.track-bg:after {
   content: ' ';
   position: absolute;
   width: 100%;
   height: 80rpx;
   z-index: 10;
-  background-color: #FFF;
+  background-color: #fff;
   left: 0;
   bottom: 0;
   border-top-left-radius: 50%;
@@ -54,7 +54,7 @@
 .track-history {
   padding: 20rpx;
   width: 90%;
-  margin-top:-20rpx; 
+  margin-top: -20rpx;
 }
 
 .track-history-title {
@@ -88,6 +88,7 @@
 
 .track-history-item-title view {
   margin-left: 80rpx;
+  min-height: 62rpx;
 }
 
 .track-history-item-title text {
@@ -140,4 +141,11 @@
 .track-null .track-history-item-title {
   background-color: #f5f5f5;
 }
-.i-scan{width: 5%;position: absolute;right: 50rpx;top: 20rpx;z-index: 10;}
+
+.i-scan {
+  width: 5%;
+  position: absolute;
+  right: 50rpx;
+  top: 20rpx;
+  z-index: 10;
+}

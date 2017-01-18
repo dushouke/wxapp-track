@@ -31,7 +31,6 @@
             <text class="track-number">{{item.TrackingNumber}}</text>
             <text wx:if="{{item.Original.CarrireName && item.Destination.CarrireName}}" class="track-route">从{{item.Original.CountryCnName}}「{{item.Original.CarrireName}}」发往{{item.Destination.CountryCnName}}「{{item.Destination.CarrireName}}」</text>
             <text wx:elif="{{item.Original.CarrireName}}" class="track-route">{{item.Original.CountryCnName}}「{{item.Original.CarrireName}}」</text>
-            <text wx:else class="track-route transparent">--</text>
           </view>
         </view>
         <view wx:if="{{item.LastEvent}}" class="track-history-item-content">

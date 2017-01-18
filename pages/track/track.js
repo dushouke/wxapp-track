@@ -19,8 +19,8 @@ Page({
         console.log(res.data);
       }
     });
-    var data = mockDatas[parseInt((Math.random()*10)%3)];
-    
+    var data = mockDatas[parseInt((Math.random() * 10) % 3)];
+
     switch (data.Status) {
       case 'Delivered':
         that.setData({ titleInfo: { css: 'track-success', iconType: 'success' } });
