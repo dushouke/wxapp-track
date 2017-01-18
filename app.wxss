@@ -31,4 +31,4 @@
     color: #428bca;
     text-decoration: underline;
 }
-
+.transparent{color: transparent;}

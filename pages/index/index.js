@@ -70,7 +70,7 @@ Page({
         keys = res.keys,
         histories = [];
 
-      for (var i in keys) {
+      for (var i in keys.reverse()) {
         var key = keys[i]
 
         if (!key.startsWith('TN::')) {

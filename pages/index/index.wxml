@@ -29,14 +29,16 @@
           <icon type="{{item.iconType}}" size="30" />
           <view>
             <text class="track-number">{{item.TrackingNumber}}</text>
-            <text class="track-route">从{{item.Original.CountryCnName}}「{{item.Original.CarrireName}}」发往{{item.Destination.CountryCnName}}「{{item.Destination.CarrireName}}」</text>
+            <text wx:if="{{item.Original.CarrireName && item.Destination.CarrireName}}" class="track-route">从{{item.Original.CountryCnName}}「{{item.Original.CarrireName}}」发往{{item.Destination.CountryCnName}}「{{item.Destination.CarrireName}}」</text>
+            <text wx:elif="{{item.Original.CarrireName}}" class="track-route">{{item.Original.CountryCnName}}「{{item.Original.CarrireName}}」</text>
+            <text wx:else class="track-route transparent">--</text>
           </view>
         </view>
         <view wx:if="{{item.LastEvent}}" class="track-history-item-content">
           <text>{{item.LastEvent.Location?item.LastEvent.Location+', ':''}}{{item.LastEvent.Event}}</text>
           <text class="mt-10">{{item.LastEvent.Time}}</text>
         </view>
-        <view wx:else>
+        <view wx:else class="track-history-item-content">
           <text class='text-muted'>您的包裹查询不到跟踪信息。</text>
         </view>
       </view>

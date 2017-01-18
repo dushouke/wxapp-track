@@ -83,7 +83,7 @@ Page({
   }
 });
 
-var data2 = {
+var data = {
   TrackingNumber: "1Z7500R0396832623",
   Status: "None",
   StatusDescription: "--",
@@ -133,7 +133,7 @@ var data2 = {
   DeliverElapsed: null,
   Duration: ""
 };
-var data1 =
+var data2 =
   {
     TrackingNumber: "1Z7500RA0396832623",
     Status: "Delivered",
@@ -225,7 +225,7 @@ var data1 =
     DeliverElapsed: 1268,
     Duration: "21小时"
   };
-var data =
+var data1 =
   {
     TrackingNumber: "LX255744009CN",
     Status: "Transit",

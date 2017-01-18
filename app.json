@@ -1,8 +1,7 @@
 {
   "pages":[
-    "pages/track/track",
-    "pages/index/index"
-    
+    "pages/index/index",
+    "pages/track/track"
   ],
   "window":{
     "backgroundTextStyle":"light",
