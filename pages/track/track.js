@@ -64,7 +64,7 @@ Page({
     });
 
     wx.setStorage({
-      key: 'TN::' + data.TrackingNumber+"::"+(+new Date()),
+      key: 'TN::' + data.TrackingNumber,
       data: {
         TrackingNumber: data.TrackingNumber,
         Status: data.Status,
